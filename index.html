@@ -1255,7 +1255,7 @@ function showModal(scores,avg,verdict,cardRecs) {
     try {
       emailjs.init({publicKey:CFG.emailjs_key});
       await emailjs.send(CFG.emailjs_service,CFG.emailjs_tpl,{
-        to_email:email, owner_email:CFG.owner_email, user_name:name,
+        email:email, owner_email:CFG.owner_email, user_name:name,
         avg_score:avg.toFixed(1), date:new Date().toLocaleDateString('ru-RU'),
         results:resText, verdict:verdict.main, cards:cardsText
       });
